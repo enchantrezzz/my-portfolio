@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, GraduationCap, Trophy } from "lucide-react";
@@ -48,7 +51,14 @@ export const ExperienceTimeline: React.FC = () => {
 
       <div className="relative mt-6 pl-8 border-l-2 border-zinc-800 space-y-8">
         {timeline.map((item, i) => (
-          <div key={i} className="relative">
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -12 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.4, delay: i * 0.1, ease: "easeOut" }}
+            className="relative"
+          >
             {/* Dot */}
             <div
               className={`absolute -left-[41px] top-1 flex h-6 w-6 items-center justify-center rounded-full border ${item.iconBorder} bg-zinc-950 ${item.iconColor}`}
@@ -66,7 +76,7 @@ export const ExperienceTimeline: React.FC = () => {
                 {item.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </Card>

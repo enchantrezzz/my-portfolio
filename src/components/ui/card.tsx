@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
+import { motion, type HTMLMotionProps } from "framer-motion";
 import { useMouseGlow } from "@/lib/hooks/useMouseGlow";
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface CardProps extends HTMLMotionProps<"div"> {
   children: React.ReactNode;
   className?: string;
   enableGlow?: boolean;
@@ -18,8 +19,9 @@ export const Card: React.FC<CardProps> = ({
   const { ref, coords, isHovered } = useMouseGlow();
 
   return (
-    <div
+    <motion.div
       ref={ref}
+      whileHover={{ y: -3, transition: { duration: 0.2, ease: "easeOut" } }}
       className={`relative overflow-hidden rounded-xl border border-[rgba(63,63,70,0.4)] bg-[rgba(24,24,27,0.4)] backdrop-blur-md transition-colors duration-300 hover:bg-[rgba(39,39,42,0.6)] ${className}`}
       {...props}
     >
@@ -33,6 +35,6 @@ export const Card: React.FC<CardProps> = ({
         />
       )}
       {children}
-    </div>
+    </motion.div>
   );
 };

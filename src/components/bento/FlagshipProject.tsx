@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, Heart, ChevronRight } from "lucide-react";
@@ -55,58 +56,87 @@ export const FlagshipProject: React.FC = () => {
           <button
             key={p.id}
             onClick={() => setActive(i)}
-            className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
-              active === i
-                ? "bg-zinc-800 text-white"
-                : "text-zinc-500 hover:text-zinc-300"
+            className={`relative rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+              active === i ? "text-white" : "text-zinc-500 hover:text-zinc-300"
             }`}
           >
-            {p.title.split("—")[0].trim()}
+            {active === i && (
+              <motion.span
+                layoutId="project-tab-bg"
+                className="absolute inset-0 rounded-lg bg-zinc-800"
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              />
+            )}
+            <span className="relative">{p.title.split("—")[0].trim()}</span>
           </button>
         ))}
       </div>
 
-      {/* Project detail */}
-      <div className="mt-6 flex-1 flex flex-col">
-        {/* Icon + title */}
-        <div className="flex items-start gap-3">
-          <div
-            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border ${project.iconBg}`}
-          >
-            {project.icon}
-          </div>
-          <div>
-            <div className="flex flex-wrap items-center gap-2">
-              <h3 className="text-sm font-semibold text-white">{project.title}</h3>
-              <Badge className={`text-[10px] ${project.tagClass}`}>
-                {project.tag}
-              </Badge>
+      {/* Project detail — animates on tab change */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={project.id}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -6 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          className="mt-6 flex-1 flex flex-col"
+        >
+          {/* Icon + title */}
+          <div className="flex items-start gap-3">
+            <div
+              className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border ${project.iconBg}`}
+            >
+              {project.icon}
             </div>
-            <p className="text-xs text-zinc-500 mt-0.5">{project.subtitle}</p>
+            <div>
+              <div className="flex flex-wrap items-center gap-2">
+                <h3 className="text-sm font-semibold text-white">{project.title}</h3>
+                <Badge className={`text-[10px] ${project.tagClass}`}>
+                  {project.tag}
+                </Badge>
+              </div>
+              <p className="text-xs text-zinc-500 mt-0.5">{project.subtitle}</p>
+            </div>
           </div>
-        </div>
 
-        {/* Description */}
-        <p className="mt-5 text-sm text-zinc-400 leading-relaxed">
-          {project.description}
-        </p>
+          {/* Description */}
+          <p className="mt-5 text-sm text-zinc-400 leading-relaxed">
+            {project.description}
+          </p>
 
-        {/* Highlight callout */}
-        <div className="mt-4 flex items-start gap-2 rounded-lg border border-zinc-800 bg-zinc-950/40 p-3">
-          <ChevronRight
-            className="h-3.5 w-3.5 text-zinc-500 mt-0.5 shrink-0"
-            aria-hidden="true"
-          />
-          <p className="text-xs text-zinc-400">{project.highlight}</p>
-        </div>
+          {/* Highlight callout */}
+          <div className="mt-4 flex items-start gap-2 rounded-lg border border-zinc-800 bg-zinc-950/40 p-3">
+            <ChevronRight
+              className="h-3.5 w-3.5 text-zinc-500 mt-0.5 shrink-0"
+              aria-hidden="true"
+            />
+            <p className="text-xs text-zinc-400">{project.highlight}</p>
+          </div>
 
-        {/* Stack */}
-        <div className="mt-5 flex flex-wrap gap-1.5">
-          {project.stack.map((tech) => (
-            <Badge key={tech}>{tech}</Badge>
-          ))}
-        </div>
-      </div>
+          {/* Stack */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
+            }}
+            className="mt-5 flex flex-wrap gap-1.5"
+          >
+            {project.stack.map((tech) => (
+              <motion.div
+                key={tech}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.9 },
+                  visible: { opacity: 1, scale: 1, transition: { duration: 0.2 } },
+                }}
+              >
+                <Badge>{tech}</Badge>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
     </Card>
   );
 };
