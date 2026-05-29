@@ -1,7 +1,9 @@
+import { Suspense } from "react";
 import { Hero } from "@/components/bento/Hero";
 import { FlagshipProject } from "@/components/bento/FlagshipProject";
 import { TechEcosystem } from "@/components/bento/TechEcosystem";
 import { GitHubStats } from "@/components/bento/GitHubStats";
+import { GitHubStatsSkeleton } from "@/components/bento/GitHubStatsSkeleton";
 import { ExperienceTimeline } from "@/components/bento/ExperienceTimeline";
 import { Card } from "@/components/ui/card";
 import { Mail, Send } from "lucide-react";
@@ -25,8 +27,11 @@ export default function Home() {
             <TechEcosystem />
           </FadeUp>
 
+          {/* GitHub card — async server component with skeleton fallback */}
           <FadeUp delay={0.3}>
-            <GitHubStats />
+            <Suspense fallback={<GitHubStatsSkeleton />}>
+              <GitHubStats />
+            </Suspense>
           </FadeUp>
 
           <FadeUp delay={0.15} className="md:col-span-2">

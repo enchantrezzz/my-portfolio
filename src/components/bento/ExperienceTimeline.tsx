@@ -41,7 +41,7 @@ const timeline = [
     badge: "In Progress",
     badgeClass: "border-ctp-blue/30 bg-ctp-blue/10 text-ctp-blue",
     description:
-      "Studying the fundamentals of computing, software design, and engineering. Coursework spans algorithms, distributed systems, software architecture, and machine learning.",
+      "Studying the fundamentals of computing, software design, and engineering. Coursework spans algorithms, distributed systems, software architecture, and object oriented programming.",
   },
 ];
 

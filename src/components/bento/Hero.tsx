@@ -20,15 +20,15 @@ const statusItems = [
         <span className="relative inline-flex rounded-full h-2 w-2 bg-ctp-green" />
       </span>
     ),
-    label: "Interning @ BITRI Botswana",
+    label: "Intern @ Botswana Institute for Research and Innovation (BITRI)",
   },
   {
     icon: <GraduationCap className="h-3.5 w-3.5" aria-hidden="true" />,
-    label: "CS & Software Engineering",
+    label: "Computer Science & Software Engineering",
   },
   {
     icon: <MapPin className="h-3.5 w-3.5" aria-hidden="true" />,
-    label: "Botswana",
+    label: "Palapye, Botswana",
   },
 ];
 
@@ -63,8 +63,8 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.35 }}
             className="mt-4 text-base md:text-lg text-ctp-subtext0 leading-relaxed"
           >
-            CS & Software Engineering undergrad with a passion for building things that matter —
-            from mobile apps to backend systems to AI-powered solutions.
+            Computer Science & Software Engineering Undergraduate with a heart for building things that matter —
+            from mobile apps to backend systems and AI-powered solutions.
           </motion.p>
         </div>
 

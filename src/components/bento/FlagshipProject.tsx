@@ -16,9 +16,9 @@ const projects = [
     title: "Africa Digital ID — Health Sector",
     subtitle: "Major Africa Digital ID Hackathon",
     description:
-      "Built a digital identity solution focused on the health sector as part of a major Africa-wide hackathon. The system links patient identities to health records, enabling secure, portable access to medical history across providers.",
-    stack: ["React Native", "Node.js", "REST APIs", "Digital Identity"],
-    highlight: "Competed at a continental level against teams across Africa.",
+      "Contributed to the development of a digital Health records platform for Botswana that links a citizen's national ID to essential medical information, enabling rapid access during emergencies to improve service delivery in healthcare facilities. ",
+    stack: ["React Native", "Node.js", "REST APIs", "Digital Identity", "MOSIP sandbox", "eSignet", "injiVerify"],
+    highlight: "Placed 3rd place at a regional level (Southern Africa)",
   },
   {
     id: "health-system",
@@ -26,11 +26,11 @@ const projects = [
     iconBg: "border-ctp-pink/20 bg-ctp-pink/5",
     tag: "Project",
     tagClass: "border-ctp-pink/30 bg-ctp-pink/10 text-ctp-pink",
-    title: "Distributed Hospital Monitoring System",
+    title: "Smart Health Monitoring System",
     subtitle: "Hospital-wide patient monitoring",
     description:
       "Designed and built a distributed system for real-time patient monitoring across an entire hospital network. Aggregates vitals and alerts from multiple wards into a unified dashboard for clinical staff.",
-    stack: ["Distributed Systems", "Backend", "Real-time Data", "Healthcare"],
+    stack: ["FastAPI", "RabbitMQ", "React", "Scikit-Learn", "Python", "Docker"],
     highlight: "Built to handle concurrent data streams from multiple wards.",
   },
 ];
