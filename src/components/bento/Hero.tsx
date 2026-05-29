@@ -16,11 +16,11 @@ const statusItems = [
   {
     icon: (
       <span className="relative flex h-2 w-2">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-ctp-green opacity-75" />
+        <span className="relative inline-flex rounded-full h-2 w-2 bg-ctp-green" />
       </span>
     ),
-    label: "Intern at Botswana Institute for Research and Innovation (BITRI)",
+    label: "Interning @ BITRI Botswana",
   },
   {
     icon: <GraduationCap className="h-3.5 w-3.5" aria-hidden="true" />,
@@ -42,7 +42,7 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-sm font-mono text-zinc-500 mb-3"
+            className="text-sm text-ctp-overlay1 mb-3"
           >
             Hey, I&apos;m
           </motion.p>
@@ -51,16 +51,17 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-4xl md:text-5xl font-bold tracking-tight text-white"
+            className="text-4xl md:text-5xl font-bold tracking-tight text-ctp-text"
           >
-            Pako Jack Motsumi
+            Pako Jack{" "}
+            <span className="text-ctp-mauve">Motsumi</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.35 }}
-            className="mt-4 text-base md:text-lg text-zinc-400 leading-relaxed"
+            className="mt-4 text-base md:text-lg text-ctp-subtext0 leading-relaxed"
           >
             CS & Software Engineering undergrad with a passion for building things that matter —
             from mobile apps to backend systems to AI-powered solutions.
@@ -77,7 +78,7 @@ export const Hero: React.FC = () => {
           {statusItems.map(({ icon, label }) => (
             <div
               key={label}
-              className="flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-3 py-1.5 text-xs text-zinc-400"
+              className="flex items-center gap-2 rounded-full border border-ctp-surface1 bg-ctp-surface0/40 px-3 py-1.5 text-xs text-ctp-subtext0"
             >
               {icon}
               {label}
@@ -93,7 +94,7 @@ export const Hero: React.FC = () => {
         variants={{
           visible: { transition: { staggerChildren: 0.07, delayChildren: 0.55 } },
         }}
-        className="mt-8 flex flex-wrap gap-2 border-t border-zinc-800/60 pt-6"
+        className="mt-8 flex flex-wrap gap-2 border-t border-ctp-surface0 pt-6"
       >
         {interests.map((interest) => (
           <motion.span
@@ -102,7 +103,7 @@ export const Hero: React.FC = () => {
               hidden: { opacity: 0, y: 8 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
             }}
-            className="rounded-full border border-zinc-800 bg-zinc-900/40 px-3 py-1 text-xs text-zinc-400"
+            className="rounded-full border border-ctp-surface1 bg-ctp-surface0/40 px-3 py-1 text-xs text-ctp-subtext1"
           >
             {interest}
           </motion.span>

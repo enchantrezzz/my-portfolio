@@ -1,43 +1,84 @@
 @import "tailwindcss";
 
+/* ── Catppuccin Mocha palette ── */
 :root {
-  --background: #09090b;
-  --foreground: #f4f4f5;
-  --font-geist-sans: "Geist Sans", "Inter", sans-serif;
-  --font-geist-mono: "Geist Mono", "Fira Code", monospace;
+  --ctp-base:     #1e1e2e;
+  --ctp-mantle:   #181825;
+  --ctp-crust:    #11111b;
+  --ctp-surface0: #313244;
+  --ctp-surface1: #45475a;
+  --ctp-surface2: #585b70;
+  --ctp-overlay0: #6c7086;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay2: #9399b2;
+  --ctp-text:     #cdd6f4;
+  --ctp-subtext0: #a6adc8;
+  --ctp-subtext1: #bac2de;
+  --ctp-lavender: #b4befe;
+  --ctp-blue:     #89b4fa;
+  --ctp-sky:      #89dceb;
+  --ctp-teal:     #94e2d5;
+  --ctp-green:    #a6e3a1;
+  --ctp-yellow:   #f9e2af;
+  --ctp-peach:    #fab387;
+  --ctp-mauve:    #cba6f7;
+  --ctp-pink:     #f38ba8;
+  --ctp-red:      #f38ba8;
+  --ctp-maroon:   #eba0ac;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-rosewater:#f5e0dc;
 }
 
+/* ── Tailwind CSS theme tokens ── */
+@theme {
+  --color-ctp-base:     var(--ctp-base);
+  --color-ctp-mantle:   var(--ctp-mantle);
+  --color-ctp-crust:    var(--ctp-crust);
+  --color-ctp-surface0: var(--ctp-surface0);
+  --color-ctp-surface1: var(--ctp-surface1);
+  --color-ctp-surface2: var(--ctp-surface2);
+  --color-ctp-overlay0: var(--ctp-overlay0);
+  --color-ctp-overlay1: var(--ctp-overlay1);
+  --color-ctp-overlay2: var(--ctp-overlay2);
+  --color-ctp-text:     var(--ctp-text);
+  --color-ctp-subtext0: var(--ctp-subtext0);
+  --color-ctp-subtext1: var(--ctp-subtext1);
+  --color-ctp-lavender: var(--ctp-lavender);
+  --color-ctp-blue:     var(--ctp-blue);
+  --color-ctp-sky:      var(--ctp-sky);
+  --color-ctp-teal:     var(--ctp-teal);
+  --color-ctp-green:    var(--ctp-green);
+  --color-ctp-yellow:   var(--ctp-yellow);
+  --color-ctp-peach:    var(--ctp-peach);
+  --color-ctp-mauve:    var(--ctp-mauve);
+  --color-ctp-pink:     var(--ctp-pink);
+  --color-ctp-red:      var(--ctp-red);
+  --color-ctp-maroon:   var(--ctp-maroon);
+  --color-ctp-flamingo: var(--ctp-flamingo);
+  --color-ctp-rosewater:var(--ctp-rosewater);
+
+  --font-mono: var(--font-jetbrains-mono), "Fira Code", monospace;
+  --font-sans: var(--font-jetbrains-mono), "Fira Code", monospace;
+}
+
+/* ── Base styles ── */
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans);
+  background-color: var(--ctp-base);
+  color: var(--ctp-text);
+  font-family: var(--font-jetbrains-mono), monospace;
   overflow-x: hidden;
   margin: 0;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbar configurations */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
+/* ── Scrollbar ── */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: var(--ctp-surface1); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ctp-surface2); }
 
-/* Global utility classes for animated glowing rings */
-@keyframes ringGlow {
-  0%, 100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.8;
-  }
+/* ── Selection ── */
+::selection {
+  background: color-mix(in srgb, var(--ctp-mauve) 30%, transparent);
+  color: var(--ctp-text);
 }
