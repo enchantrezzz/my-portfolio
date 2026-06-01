@@ -89,6 +89,7 @@ export const CommandPalette: React.FC = () => {
     { icon: <Copy     className="h-4 w-4 text-ctp-teal"    aria-hidden="true" />, label: "Copy Phone Number",         category: "Actions",    action: () => copyToClipboard("+26776011993", "Phone number") },
     { icon: <Download className="h-4 w-4 text-ctp-teal"   aria-hidden="true" />, label: "Download CV / Resume",      category: "Actions",    action: () => { window.open("/cv.pdf", "_blank", "noopener,noreferrer"); setIsOpen(false); } },
     { icon: <Download className="h-4 w-4 text-ctp-teal"   aria-hidden="true" />, label: "Open GitHub Profile",       category: "Actions",    action: () => { window.open("https://github.com/enchantrezzz", "_blank", "noopener,noreferrer"); setIsOpen(false); } },
+    { icon: <Download className="h-4 w-4 text-ctp-teal"   aria-hidden="true" />, label: "Open LinkedIn Profile",     category: "Actions",    action: () => { window.open("https://www.linkedin.com/in/pako-jack-motsumi-338b19401", "_blank", "noopener,noreferrer"); setIsOpen(false); } },
   ];
 
   const filteredCommands = commands.filter(
