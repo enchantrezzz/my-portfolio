@@ -3,6 +3,7 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { CommandPalette } from "@/components/ui/command";
 import { CommandHint } from "@/components/ui/CommandHint";
+import { Analytics } from "@vercel/analytics/next";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -42,6 +43,7 @@ export default function RootLayout({
         {children}
         <CommandPalette />
         <CommandHint />
+        <Analytics />
       </body>
     </html>
   );
