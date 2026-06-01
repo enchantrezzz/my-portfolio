@@ -6,9 +6,9 @@ import { Card } from "@/components/ui/card";
 import { MapPin, GraduationCap } from "lucide-react";
 
 const interests = [
-  "Mobile Development",
+  "Backend Development",
   "Web Development",
-  "Backend Engineering",
+  "Mobile Development",
   "AI / ML",
 ];
 
@@ -20,11 +20,11 @@ const statusItems = [
         <span className="relative inline-flex rounded-full h-2 w-2 bg-ctp-green" />
       </span>
     ),
-    label: "Intern @ Botswana Institute for Research and Innovation (BITRI)",
+    label: "Intern @ BITRI Botswana",
   },
   {
     icon: <GraduationCap className="h-3.5 w-3.5" aria-hidden="true" />,
-    label: "Computer Science & Software Engineering",
+    label: "CS & Software Engineering · BIUST",
   },
   {
     icon: <MapPin className="h-3.5 w-3.5" aria-hidden="true" />,
@@ -36,43 +36,64 @@ export const Hero: React.FC = () => {
   return (
     <Card id="hero" className="col-span-1 md:col-span-3 p-8 flex flex-col justify-between min-h-[280px]">
       <div className="flex flex-col md:flex-row justify-between items-start gap-6">
-        {/* Main intro */}
-        <div className="max-w-2xl">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-sm text-ctp-overlay1 mb-3"
-          >
-            Hey, I&apos;m
-          </motion.p>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-4xl md:text-5xl font-bold tracking-tight text-ctp-text"
+        {/* Left: photo + intro */}
+        <div className="flex items-start gap-5 flex-1 min-w-0">
+          {/* Profile photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+            className="shrink-0"
           >
-            Pako Jack{" "}
-            <span className="text-ctp-mauve">Motsumi</span>
-          </motion.h1>
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-ctp-mauve/40 shadow-lg shadow-ctp-mauve/10">
+              <img
+                src="/profile.jpg"
+                alt="Pako Jack Motsumi"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="mt-4 text-base md:text-lg text-ctp-subtext0 leading-relaxed"
-          >
-            Computer Science & Software Engineering Undergraduate with a heart for building things that matter —
-            from mobile apps to backend systems and AI-powered solutions.
-          </motion.p>
+          {/* Text */}
+          <div className="min-w-0">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.15 }}
+              className="text-sm text-ctp-overlay1 mb-2"
+            >
+              Hey, I&apos;m
+            </motion.p>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-3xl md:text-5xl font-bold tracking-tight text-ctp-text"
+            >
+              Pako Jack{" "}
+              <span className="text-ctp-mauve">Motsumi</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-3 text-sm md:text-base text-ctp-subtext0 leading-relaxed max-w-xl"
+            >
+              Computer Science & Software Engineering undergrad with hands-on experience
+              in software development, OOP, and database management. Eager to build
+              things that matter and grow in a professional environment.
+            </motion.p>
+          </div>
         </div>
 
         {/* Status pills */}
         <motion.div
           initial={{ opacity: 0, x: 12 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
           className="flex flex-col gap-2 shrink-0"
         >
           {statusItems.map(({ icon, label }) => (
@@ -92,7 +113,7 @@ export const Hero: React.FC = () => {
         initial="hidden"
         animate="visible"
         variants={{
-          visible: { transition: { staggerChildren: 0.07, delayChildren: 0.55 } },
+          visible: { transition: { staggerChildren: 0.07, delayChildren: 0.6 } },
         }}
         className="mt-8 flex flex-wrap gap-2 border-t border-ctp-surface0 pt-6"
       >

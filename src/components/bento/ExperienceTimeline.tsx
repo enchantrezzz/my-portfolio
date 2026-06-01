@@ -8,16 +8,28 @@ import { Briefcase, GraduationCap, Trophy } from "lucide-react";
 
 const timeline = [
   {
+    icon: <GraduationCap className="h-3 w-3" aria-hidden="true" />,
+    iconColor: "text-ctp-blue",
+    iconBorder: "border-ctp-blue/30",
+    dotBg: "bg-ctp-blue/10",
+    title: "BSc Computer Science & Software Engineering",
+    org: "BIUST · Aug 2023 – Aug 2027",
+    badge: "In Progress",
+    badgeClass: "border-ctp-blue/30 bg-ctp-blue/10 text-ctp-blue",
+    description:
+      "Studying at Botswana International University of Science & Technology. Coursework covers OOP, algorithms, distributed systems, database management, and introductory machine learning.",
+  },
+  {
     icon: <Briefcase className="h-3 w-3" aria-hidden="true" />,
     iconColor: "text-ctp-green",
     iconBorder: "border-ctp-green/30",
     dotBg: "bg-ctp-green/10",
     title: "Software Engineering Intern",
-    org: "BITRI Botswana",
+    org: "BITRI · Until Aug 2026",
     badge: "Current",
     badgeClass: "border-ctp-green/30 bg-ctp-green/10 text-ctp-green",
     description:
-      "Working on real-world software projects at the Botswana Institute for Technology Research and Innovation, applying my CS knowledge in a professional research environment.",
+      "Working on real-world software projects at the Botswana Institute for Technology Research and Innovation, applying academic knowledge in a professional research environment.",
   },
   {
     icon: <Trophy className="h-3 w-3" aria-hidden="true" />,
@@ -25,23 +37,11 @@ const timeline = [
     iconBorder: "border-ctp-yellow/30",
     dotBg: "bg-ctp-yellow/10",
     title: "Africa Digital ID Hackathon",
-    org: "Continental Competition",
-    badge: "Achievement",
+    org: "Continental Competition · Apr 2026",
+    badge: "3rd Place",
     badgeClass: "border-ctp-yellow/30 bg-ctp-yellow/10 text-ctp-yellow",
     description:
-      "Competed in a major Africa-wide hackathon, building a digital identity solution for the health sector. Represented Botswana and gained experience working under pressure on a meaningful problem.",
-  },
-  {
-    icon: <GraduationCap className="h-3 w-3" aria-hidden="true" />,
-    iconColor: "text-ctp-blue",
-    iconBorder: "border-ctp-blue/30",
-    dotBg: "bg-ctp-blue/10",
-    title: "BSc Computer Science & Software Engineering",
-    org: "Undergraduate",
-    badge: "In Progress",
-    badgeClass: "border-ctp-blue/30 bg-ctp-blue/10 text-ctp-blue",
-    description:
-      "Studying the fundamentals of computing, software design, and engineering. Coursework spans algorithms, distributed systems, software architecture, and object oriented programming.",
+      "Placed 3rd at a regional level (Southern Africa). Built a digital health records platform linking national IDs to medical information for rapid access during emergencies.",
   },
 ];
 

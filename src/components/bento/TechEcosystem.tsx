@@ -5,16 +5,16 @@ import { Layers } from "lucide-react";
 
 const skills: { label: string; items: string[] }[] = [
   {
-    label: "Mobile & Web",
-    items: ["React Native", "Next.js", "TypeScript", "Tailwind CSS"],
+    label: "Languages",
+    items: ["Python", "Java", "C", "C++", "PHP"],
   },
   {
-    label: "Backend",
-    items: ["Node.js", "Go", "REST APIs", "GraphQL"],
+    label: "Web & Database",
+    items: ["HTML", "CSS", "MySQL", "JDBC"],
   },
   {
-    label: "AI / ML",
-    items: ["Python", "TensorFlow", "Data Pipelines"],
+    label: "Tools & Concepts",
+    items: ["Git", "VS Code", "Figma", "OOP", "Machine Learning"],
   },
 ];
 

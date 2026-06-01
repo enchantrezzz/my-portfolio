@@ -86,7 +86,9 @@ export const CommandPalette: React.FC = () => {
     { icon: <Compass className="h-4 w-4 text-ctp-lavender" aria-hidden="true" />, label: "Navigate to My Journey",    category: "Navigation", action: () => scrollToSection("experience") },
     { icon: <Compass className="h-4 w-4 text-ctp-lavender" aria-hidden="true" />, label: "Navigate to Contact",       category: "Navigation", action: () => scrollToSection("contact") },
     { icon: <Copy     className="h-4 w-4 text-ctp-teal"    aria-hidden="true" />, label: "Copy Email Address",        category: "Actions",    action: () => copyToClipboard("pjmotsumi06@gmail.com", "Email address") },
-    { icon: <Download className="h-4 w-4 text-ctp-teal"    aria-hidden="true" />, label: "Open GitHub Profile",       category: "Actions",    action: () => { window.open("https://github.com/enchantrezzz", "_blank", "noopener,noreferrer"); setIsOpen(false); } },
+    { icon: <Copy     className="h-4 w-4 text-ctp-teal"    aria-hidden="true" />, label: "Copy Phone Number",         category: "Actions",    action: () => copyToClipboard("+26776011993", "Phone number") },
+    { icon: <Download className="h-4 w-4 text-ctp-teal"   aria-hidden="true" />, label: "Download CV / Resume",      category: "Actions",    action: () => { window.open("/cv.pdf", "_blank", "noopener,noreferrer"); setIsOpen(false); } },
+    { icon: <Download className="h-4 w-4 text-ctp-teal"   aria-hidden="true" />, label: "Open GitHub Profile",       category: "Actions",    action: () => { window.open("https://github.com/enchantrezzz", "_blank", "noopener,noreferrer"); setIsOpen(false); } },
   ];
 
   const filteredCommands = commands.filter(

@@ -51,6 +51,29 @@ export default function Home() {
 
                 <div className="mt-5 space-y-2">
                   <a
+                    href="/cv.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download="Pako_Motsumi_CV.pdf"
+                    className="flex items-center gap-3 rounded-lg border border-ctp-mauve/30 bg-ctp-mauve/10 p-2.5 text-xs text-ctp-mauve transition-colors hover:border-ctp-mauve/60 hover:bg-ctp-mauve/20"
+                  >
+                    <svg className="h-3.5 w-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    <span>Download CV / Resume</span>
+                  </a>
+                  <a
+                    href="tel:+26776011993"
+                    className="flex items-center gap-3 rounded-lg border border-ctp-surface0 bg-ctp-crust/60 p-2.5 text-xs text-ctp-subtext0 transition-colors hover:border-ctp-surface1 hover:text-ctp-text"
+                  >
+                    <svg className="h-3.5 w-3.5 shrink-0 text-ctp-mauve" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17.42z" />
+                    </svg>
+                    <span>+267 76011993</span>
+                  </a>
+                  <a
                     href="mailto:pjmotsumi06@gmail.com"
                     className="flex items-center gap-3 rounded-lg border border-ctp-surface0 bg-ctp-crust/60 p-2.5 text-xs text-ctp-subtext0 transition-colors hover:border-ctp-surface1 hover:text-ctp-text"
                   >
