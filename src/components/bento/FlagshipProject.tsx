@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Heart, ChevronRight, BookOpen, Monitor, ShoppingBag, Car } from "lucide-react";
+import { Trophy, Heart, ChevronRight, BookOpen, Monitor, ShoppingBag, Car, Calendar } from "lucide-react";
 
 type Project = {
   id: string;
@@ -33,9 +33,6 @@ const featured: Project[] = [
     stack: ["React Native", "Node.js", "REST APIs", "MOSIP sandbox", "eSignet", "injiVerify"],
     highlight: "Placed 3rd at a regional level (Southern Africa).",
   },
-];
-
-const academic: Project[] = [
   {
     id: "health-system",
     icon: <Heart className="h-4 w-4 text-ctp-pink" aria-hidden="true" />,
@@ -49,6 +46,9 @@ const academic: Project[] = [
     stack: ["FastAPI", "RabbitMQ", "React", "Scikit-Learn", "Python", "Docker"],
     highlight: "Built to handle concurrent data streams from multiple wards.",
   },
+];
+
+const academic: Project[] = [
   {
     id: "visitor-system",
     icon: <Monitor className="h-4 w-4 text-ctp-blue" aria-hidden="true" />,
@@ -74,6 +74,19 @@ const academic: Project[] = [
       "Console-based system to manage customer records, vehicle inventory, and invoices. Applied OOP principles including encapsulation, modular design, and class-based architecture.",
     stack: ["C++", "OOP", "File I/O"],
     highlight: "Implemented input validation and error handling for system reliability.",
+  },
+  {
+    id: "event-horizon",
+    icon: <Calendar className="h-4 w-4 text-ctp-lavender" aria-hidden="true" />,
+    iconBg: "border-ctp-lavender/20 bg-ctp-lavender/5",
+    tag: "Group Project",
+    tagClass: "border-ctp-lavender/30 bg-ctp-lavender/10 text-ctp-lavender",
+    title: "Event Horizon",
+    subtitle: "Dual-platform event management ecosystem",
+    description:
+      "A highly optimized event management and facilitation ecosystem designed to streamline event publishing for hosts and simplify check-ins for attendees. Consists of a full-stack Next.js web portal paired with a lightweight, camera-integrated React Native/Expo mobile app for live event organizers and field teams.",
+    stack: ["React Native", "Expo", "Next.js", "Node.js", "TypeScript", "Firebase"],
+    highlight: "Where events go to become legendary... or at least not get cancelled.",
   },
   {
     id: "ecommerce-ui",
