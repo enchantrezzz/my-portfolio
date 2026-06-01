@@ -33,6 +33,9 @@ const featured: Project[] = [
     stack: ["React Native", "Node.js", "REST APIs", "MOSIP sandbox", "eSignet", "injiVerify"],
     highlight: "Placed 3rd at a regional level (Southern Africa).",
   },
+];
+
+const academic: Project[] = [
   {
     id: "health-system",
     icon: <Heart className="h-4 w-4 text-ctp-pink" aria-hidden="true" />,
@@ -46,9 +49,6 @@ const featured: Project[] = [
     stack: ["FastAPI", "RabbitMQ", "React", "Scikit-Learn", "Python", "Docker"],
     highlight: "Built to handle concurrent data streams from multiple wards.",
   },
-];
-
-const academic: Project[] = [
   {
     id: "visitor-system",
     icon: <Monitor className="h-4 w-4 text-ctp-blue" aria-hidden="true" />,
