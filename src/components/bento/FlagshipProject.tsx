@@ -105,7 +105,7 @@ export const FlagshipProject: React.FC = () => {
   };
 
   return (
-    <Card id="projects" className="md:col-span-2 row-span-2 p-6 flex flex-col min-h-[480px]">
+    <Card id="projects" className="p-6 flex flex-col min-h-[480px] h-full">
       {/* Header */}
       <div className="flex items-center justify-between border-b border-ctp-surface0 pb-4">
         <div className="flex items-center gap-2">

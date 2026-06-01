@@ -13,25 +13,25 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-ctp-base selection:bg-ctp-surface1 selection:text-ctp-text">
       <div className="mx-auto max-w-6xl px-4 py-16">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:items-stretch">
 
           <FadeUp delay={0} className="col-span-1 md:col-span-3">
             <Hero />
           </FadeUp>
 
-          <FadeUp delay={0.1} className="md:col-span-2 md:row-span-2">
+          <FadeUp delay={0.1} className="col-span-1 md:col-span-3">
             <FlagshipProject />
           </FadeUp>
 
-          <FadeUp delay={0.2}>
-            <TechEcosystem />
-          </FadeUp>
-
           {/* GitHub card — async server component with skeleton fallback */}
-          <FadeUp delay={0.3}>
+          <FadeUp delay={0.2} className="md:col-span-2 md:h-full">
             <Suspense fallback={<GitHubStatsSkeleton />}>
               <GitHubStats />
             </Suspense>
+          </FadeUp>
+
+          <FadeUp delay={0.3} className="md:col-span-1 md:h-full">
+            <TechEcosystem />
           </FadeUp>
 
           <FadeUp delay={0.15} className="md:col-span-2">

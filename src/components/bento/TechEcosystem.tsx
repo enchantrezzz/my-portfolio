@@ -1,35 +1,44 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Layers } from "lucide-react";
+import { Layers, Compass, Flame, BookOpen } from "lucide-react";
 
-const skills: { label: string; items: string[] }[] = [
+const skills: { label: string; icon: React.ReactNode; items: string[] }[] = [
   {
-    label: "Languages",
-    items: ["Python", "Java", "C", "C++", "PHP"],
+    label: "Skills & Tools",
+    icon: <Layers className="h-3 w-3" aria-hidden="true" />,
+    items: ["Python", "Java", "C++", "MySQL", "Git", "Figma", "FastAPI", "React", "Docker", "Typescript", "Firebase SDK", "Supabase"],
   },
   {
-    label: "Web & Database",
-    items: ["HTML", "CSS", "MySQL", "JDBC"],
+    label: "Exploring",
+    icon: <Compass className="h-3 w-3" aria-hidden="true" />,
+    items: ["Docker", "React", "Javascript"],
   },
   {
-    label: "Tools & Concepts",
-    items: ["Git", "VS Code", "Figma", "OOP", "Machine Learning"],
+    label: "Areas of Interest",
+    icon: <Flame className="h-3 w-3" aria-hidden="true" />,
+    items: ["Mobile App Development", "Web App Development", "DevOps"],
+  },
+  {
+    label: "Coursework Highlights",
+    icon: <BookOpen className="h-3 w-3" aria-hidden="true" />,
+    items: ["Distributed Systems", "OOP", "DSA", "Operating Systems", "Computer Architecture"],
   },
 ];
 
 export const TechEcosystem: React.FC = () => {
   return (
-    <Card id="skills" className="md:col-span-1 p-6 flex flex-col gap-5 min-h-[220px]">
+    <Card id="skills" className="md:col-span-1 p-6 flex flex-col gap-5 min-h-[220px] h-full">
       <div className="flex items-center gap-2 border-b border-ctp-surface0 pb-3">
         <Layers className="h-4 w-4 text-ctp-lavender" aria-hidden="true" />
-        <h2 className="text-base font-semibold text-ctp-text">Skills & Tools</h2>
+        <h2 className="text-base font-semibold text-ctp-text">Skills</h2>
       </div>
 
-      <div className="space-y-4">
-        {skills.map(({ label, items }) => (
+      <div className="space-y-5">
+        {skills.map(({ label, icon, items }) => (
           <div key={label}>
-            <p className="text-[10px] uppercase tracking-wider text-ctp-overlay0 mb-2">
+            <p className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-ctp-overlay0 mb-2">
+              {icon}
               {label}
             </p>
             <div className="flex flex-wrap gap-1.5">

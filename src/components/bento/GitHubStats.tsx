@@ -39,7 +39,7 @@ export async function GitHubStats() {
   const totalStars = repos.reduce((s, r) => s + r.stargazers_count, 0);
 
   return (
-    <Card id="github" className="md:col-span-1 p-6 flex flex-col gap-5 min-h-[220px]">
+    <Card id="github" className="md:col-span-2 p-6 flex flex-col gap-5 min-h-[220px] h-full">
       {/* Header */}
       <div className="flex items-center justify-between border-b border-ctp-surface0 pb-3">
         <div className="flex items-center gap-2">
@@ -82,30 +82,38 @@ export async function GitHubStats() {
               href={repo.html_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between rounded-lg border border-ctp-surface0 bg-ctp-crust/40 px-3 py-2 text-xs transition-colors hover:border-ctp-surface1 hover:bg-ctp-surface0/40 group"
+              className="flex flex-col gap-1 rounded-lg border border-ctp-surface0 bg-ctp-crust/40 px-3 py-2.5 text-xs transition-colors hover:border-ctp-surface1 hover:bg-ctp-surface0/40 group"
             >
-              <div className="flex items-center gap-2 min-w-0">
-                {/* Language dot */}
-                <span className={`text-lg leading-none ${langDot(repo.language)}`} aria-hidden="true">●</span>
-                <span className="text-ctp-subtext1 group-hover:text-ctp-text transition-colors truncate">
-                  {repo.name}
-                </span>
-              </div>
-              <div className="flex items-center gap-2.5 shrink-0 ml-2 text-ctp-overlay0">
-                {repo.stargazers_count > 0 && (
-                  <span className="flex items-center gap-0.5">
-                    <Star className="h-3 w-3" aria-hidden="true" />
-                    {repo.stargazers_count}
+              {/* Name row */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className={`text-lg leading-none shrink-0 ${langDot(repo.language)}`} aria-hidden="true">●</span>
+                  <span className="text-ctp-subtext1 group-hover:text-ctp-text transition-colors truncate font-medium">
+                    {repo.name}
                   </span>
-                )}
-                {repo.forks_count > 0 && (
-                  <span className="flex items-center gap-0.5">
-                    <GitFork className="h-3 w-3" aria-hidden="true" />
-                    {repo.forks_count}
-                  </span>
-                )}
-                <span className="text-[10px]">{timeAgo(repo.updated_at)}</span>
+                </div>
+                <div className="flex items-center gap-2.5 shrink-0 ml-2 text-ctp-overlay0">
+                  {repo.stargazers_count > 0 && (
+                    <span className="flex items-center gap-0.5">
+                      <Star className="h-3 w-3" aria-hidden="true" />
+                      {repo.stargazers_count}
+                    </span>
+                  )}
+                  {repo.forks_count > 0 && (
+                    <span className="flex items-center gap-0.5">
+                      <GitFork className="h-3 w-3" aria-hidden="true" />
+                      {repo.forks_count}
+                    </span>
+                  )}
+                  <span className="text-[10px]">{timeAgo(repo.updated_at)}</span>
+                </div>
               </div>
+              {/* Description */}
+              {repo.description && (
+                <p className="text-[10px] text-ctp-overlay0 pl-5 leading-relaxed line-clamp-2">
+                  {repo.description}
+                </p>
+              )}
             </a>
           ))}
         </div>
