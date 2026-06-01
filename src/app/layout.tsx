@@ -11,6 +11,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://enchantrezzz.github.io"),
   title: "Pako Jack Motsumi | CS & Software Engineering",
   description: "CS & Software Engineering undergrad from Botswana. Building mobile apps, web platforms, and AI-powered solutions.",
   icons: {
