@@ -13,6 +13,17 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Pako Jack Motsumi | CS & Software Engineering",
   description: "CS & Software Engineering undergrad from Botswana. Building mobile apps, web platforms, and AI-powered solutions.",
+  icons: {
+    icon: "/icon.svg",
+  },
+  openGraph: {
+    title: "Pako Jack Motsumi | CS & Software Engineering",
+    description: "CS & Software Engineering undergrad from Botswana. Building mobile apps, web platforms, and AI-powered solutions.",
+    url: "https://pako.dev",
+    siteName: "Pako Jack Motsumi",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
