@@ -29,7 +29,7 @@ async function ghFetch<T>(path: string): Promise<T> {
   const res = await fetch(`${BASE}${path}`, {
     headers: { Accept: "application/vnd.github+json" },
     // Revalidate once per hour — served from cache instantly between refreshes
-    next: { revalidate: 3 },
+    next: { revalidate: 120 },
   });
 
   if (!res.ok) {
