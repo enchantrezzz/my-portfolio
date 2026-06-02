@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Heart, ChevronRight, BookOpen, Monitor, ShoppingBag, Car, Calendar } from "lucide-react";
+import { Trophy, Heart, ChevronRight, BookOpen, Monitor, ShoppingBag, Car, Calendar, ExternalLink } from "lucide-react";
 
 type Project = {
   id: string;
@@ -17,6 +17,8 @@ type Project = {
   description: string;
   stack: string[];
   highlight: string;
+  repoUrl?: string;
+  liveUrl?: string;
 };
 
 const featured: Project[] = [
@@ -48,6 +50,7 @@ const academic: Project[] = [
       "Designed and built a distributed system for real-time patient monitoring across an entire hospital network. Aggregates vitals and alerts from multiple wards into a unified dashboard for clinical staff.",
     stack: ["FastAPI", "RabbitMQ", "React", "Scikit-Learn", "Python", "Docker"],
     highlight: "Built to handle concurrent data streams from multiple wards.",
+    repoUrl: "https://github.com/enchantrezzz/medflow.git",
   },
   {
     id: "visitor-system",
@@ -87,6 +90,8 @@ const academic: Project[] = [
       "A highly optimized event management and facilitation ecosystem designed to streamline event publishing for hosts and simplify check-ins for attendees. Consists of a full-stack Next.js web portal paired with a lightweight, camera-integrated React Native/Expo mobile app for live event organizers and field teams.",
     stack: ["React Native", "Expo", "Next.js", "Node.js", "TypeScript", "Firebase"],
     highlight: "Where events go to become legendary... or at least not get cancelled.",
+    repoUrl: "https://github.com/enchantrezzz/event-horizon.git",
+    liveUrl: "https://event-horizon-bice.vercel.app",
   },
   {
     id: "ecommerce-ui",
@@ -212,6 +217,33 @@ export const FlagshipProject: React.FC = () => {
             <ChevronRight className="h-3.5 w-3.5 text-ctp-mauve mt-0.5 shrink-0" aria-hidden="true" />
             <p className="text-xs text-ctp-subtext0">{project.highlight}</p>
           </div>
+
+          {(project.repoUrl || project.liveUrl) && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {project.repoUrl && (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center gap-1.5 rounded-md border border-ctp-lavender/30 bg-ctp-lavender/10 px-2.5 py-1.5 text-[11px] text-ctp-lavender transition-colors hover:border-ctp-lavender/50 hover:bg-ctp-lavender/20"
+                >
+                  <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                  View Repository
+                </a>
+              )}
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center gap-1.5 rounded-md border border-ctp-blue/30 bg-ctp-blue/10 px-2.5 py-1.5 text-[11px] text-ctp-blue transition-colors hover:border-ctp-blue/50 hover:bg-ctp-blue/20"
+                >
+                  <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                  Live Website
+                </a>
+              )}
+            </div>
+          )}
 
           {/* Stack badges */}
           <motion.div
