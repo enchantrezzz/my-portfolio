@@ -120,7 +120,7 @@ export async function GitHubStats() {
       )}
 
       <p className="text-[10px] text-ctp-overlay0 mt-auto">
-        @{profile.login} · refreshes hourly
+        @{profile.login} · refreshes every 2 minutes
       </p>
     </Card>
   );

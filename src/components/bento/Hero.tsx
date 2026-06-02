@@ -32,6 +32,12 @@ const statusItems = [
   },
 ];
 
+const trustSignals = [
+  "3rd Place · Africa Digital ID Hackathon",
+  "Software Engineering Intern · BITRI",
+  "Open to Remote SWE Opportunities",
+];
+
 export const Hero: React.FC = () => {
   return (
     <Card id="hero" className="col-span-1 md:col-span-3 p-8 flex flex-col justify-between min-h-[280px]">
@@ -86,6 +92,51 @@ export const Hero: React.FC = () => {
               in software development, OOP, and database management. Eager to build
               things that matter and grow in a professional environment.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.5 }}
+              className="mt-5 flex flex-wrap gap-2"
+            >
+              <a
+                href="#projects"
+                className="inline-flex items-center rounded-md border border-ctp-mauve/35 bg-ctp-mauve/15 px-3 py-1.5 text-xs font-medium text-ctp-mauve transition-colors hover:border-ctp-mauve/60 hover:bg-ctp-mauve/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-mauve/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base"
+              >
+                View Projects
+              </a>
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Pako_Motsumi_CV.pdf"
+                className="inline-flex items-center rounded-md border border-ctp-surface1 bg-ctp-surface0/45 px-3 py-1.5 text-xs font-medium text-ctp-subtext0 transition-colors hover:border-ctp-surface2 hover:text-ctp-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-lavender/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base"
+              >
+                Download CV
+              </a>
+              <a
+                href="mailto:pjmotsumi06@gmail.com"
+                className="inline-flex items-center rounded-md border border-ctp-surface1 bg-ctp-surface0/45 px-3 py-1.5 text-xs font-medium text-ctp-subtext0 transition-colors hover:border-ctp-surface2 hover:text-ctp-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-lavender/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base"
+              >
+                Email Me
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.58 }}
+              className="mt-4 flex flex-wrap gap-2"
+            >
+              {trustSignals.map((signal) => (
+                <span
+                  key={signal}
+                  className="rounded-full border border-ctp-surface1 bg-ctp-surface0/45 px-3 py-1 text-[11px] text-ctp-subtext0"
+                >
+                  {signal}
+                </span>
+              ))}
+            </motion.div>
           </div>
         </div>
 

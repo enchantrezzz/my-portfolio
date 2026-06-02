@@ -15,6 +15,8 @@ type Project = {
   title: string;
   subtitle: string;
   description: string;
+  role?: string;
+  impact?: string;
   stack: string[];
   highlight: string;
   repoUrl?: string;
@@ -22,19 +24,6 @@ type Project = {
 };
 
 const featured: Project[] = [
-  {
-    id: "digital-id",
-    icon: <Trophy className="h-4 w-4 text-ctp-yellow" aria-hidden="true" />,
-    iconBg: "border-ctp-yellow/20 bg-ctp-yellow/5",
-    tag: "Hackathon · 3rd Place",
-    tagClass: "border-ctp-yellow/30 bg-ctp-yellow/10 text-ctp-yellow",
-    title: "Africa Digital ID — Health Sector",
-    subtitle: "Major Africa Digital ID Hackathon",
-    description:
-      "Contributed to a digital health records platform for Botswana that links a citizen's national ID to essential medical information, enabling rapid access during emergencies to improve service delivery in healthcare facilities.",
-    stack: ["React Native", "Node.js", "REST APIs", "MOSIP sandbox", "eSignet", "injiVerify"],
-    highlight: "Placed 3rd at a regional level (Southern Africa).",
-  },
   {
     id: "sobriety-app",
     icon: <Smartphone className="h-4 w-4 text-ctp-green" aria-hidden="true" />,
@@ -45,24 +34,60 @@ const featured: Project[] = [
     subtitle: "Recovery milestone & habit tracker",
     description:
       "Built a clean, intuitive sobriety counter and habit tracker focused on daily accountability, milestone visibility, and long-term progress tracking for people in recovery.",
+    role: "Product engineering, frontend architecture, and Supabase integration.",
+    impact: "Shipped a live recovery-focused experience with clear milestone tracking and daily usage loops.",
     stack: ["TypeScript", "React", "Vite", "Supabase"],
     highlight: "Designed for clarity and consistent day-to-day habit reinforcement.",
     repoUrl: "https://github.com/enchantrezzz/sobriety-app.git",
     liveUrl: "https://sobriety-app-zeta.vercel.app/login",
   },
+  {
+    id: "digital-id",
+    icon: <Trophy className="h-4 w-4 text-ctp-yellow" aria-hidden="true" />,
+    iconBg: "border-ctp-yellow/20 bg-ctp-yellow/5",
+    tag: "Hackathon · 3rd Place",
+    tagClass: "border-ctp-yellow/30 bg-ctp-yellow/10 text-ctp-yellow",
+    title: "Africa Digital ID — Health Sector",
+    subtitle: "Major Africa Digital ID Hackathon",
+    description:
+      "Contributed to a digital health records platform for Botswana that links a citizen's national ID to essential medical information, enabling rapid access during emergencies to improve service delivery in healthcare facilities.",
+    role: "Platform contributor focused on health-record flows and API integration.",
+    impact: "Recognized with 3rd place regionally for practical emergency-healthcare value.",
+    stack: ["React Native", "Node.js", "REST APIs", "MOSIP sandbox", "eSignet", "injiVerify"],
+    highlight: "Placed 3rd at a regional level (Southern Africa).",
+  },
 ];
 
 const academic: Project[] = [
+  {
+    id: "event-horizon",
+    icon: <Calendar className="h-4 w-4 text-ctp-lavender" aria-hidden="true" />,
+    iconBg: "border-ctp-lavender/20 bg-ctp-lavender/5",
+    tag: "Group Project",
+    tagClass: "border-ctp-lavender/30 bg-ctp-lavender/10 text-ctp-lavender",
+    title: "Event Horizon",
+    subtitle: "Dual-platform event management ecosystem",
+    description:
+      "A highly optimized event management and facilitation ecosystem designed to streamline event publishing for hosts and simplify check-ins for attendees. Consists of a full-stack Next.js web portal paired with a lightweight, camera-integrated React Native/Expo mobile app for live event organizers and field teams.",
+    role: "Full-stack and mobile engineering across web portal, organizer app, and event workflows.",
+    impact: "Delivered a live deployable platform for real-world event operations and attendance tracking.",
+    stack: ["React Native", "Expo", "Next.js", "Node.js", "TypeScript", "Firebase"],
+    highlight: "Where events go to become legendary... or at least not get cancelled.",
+    repoUrl: "https://github.com/enchantrezzz/event-horizon.git",
+    liveUrl: "https://event-horizon-bice.vercel.app",
+  },
   {
     id: "health-system",
     icon: <Heart className="h-4 w-4 text-ctp-pink" aria-hidden="true" />,
     iconBg: "border-ctp-pink/20 bg-ctp-pink/5",
     tag: "Project",
     tagClass: "border-ctp-pink/30 bg-ctp-pink/10 text-ctp-pink",
-    title: "Smart Health Monitoring System",
+    title: "Medflow",
     subtitle: "Hospital-wide patient monitoring",
     description:
       "Designed and built a distributed system for real-time patient monitoring across an entire hospital network. Aggregates vitals and alerts from multiple wards into a unified dashboard for clinical staff.",
+    role: "Distributed systems design spanning ingestion, queues, processing workers, and dashboarding.",
+    impact: "Enabled real-time multi-ward monitoring with scalable data pipelines and alerting.",
     stack: ["FastAPI", "RabbitMQ", "React", "Scikit-Learn", "Python", "Docker"],
     highlight: "Built to handle concurrent data streams from multiple wards.",
     repoUrl: "https://github.com/enchantrezzz/medflow.git",
@@ -77,6 +102,8 @@ const academic: Project[] = [
     subtitle: "University Coursework",
     description:
       "GUI-based application to manage visitor registration, check-ins, and attendance within a company. Applied OOP principles with a modular architecture across models, database access objects, and frontend views.",
+    role: "Application development using layered OOP architecture and persistence integration.",
+    impact: "Improved data reliability with validation-driven registration and check-in workflows.",
     stack: ["Java", "MySQL", "JDBC", "Java Swing"],
     highlight: "Integrated MySQL for persistent data storage with full input validation.",
   },
@@ -90,23 +117,10 @@ const academic: Project[] = [
     subtitle: "University Coursework",
     description:
       "Console-based system to manage customer records, vehicle inventory, and invoices. Applied OOP principles including encapsulation, modular design, and class-based architecture.",
+    role: "Core systems implementation with domain modeling and file-based persistence.",
+    impact: "Provided stable invoice and inventory flows through strict input validation and error handling.",
     stack: ["C++", "OOP", "File I/O"],
     highlight: "Implemented input validation and error handling for system reliability.",
-  },
-  {
-    id: "event-horizon",
-    icon: <Calendar className="h-4 w-4 text-ctp-lavender" aria-hidden="true" />,
-    iconBg: "border-ctp-lavender/20 bg-ctp-lavender/5",
-    tag: "Group Project",
-    tagClass: "border-ctp-lavender/30 bg-ctp-lavender/10 text-ctp-lavender",
-    title: "Event Horizon",
-    subtitle: "Dual-platform event management ecosystem",
-    description:
-      "A highly optimized event management and facilitation ecosystem designed to streamline event publishing for hosts and simplify check-ins for attendees. Consists of a full-stack Next.js web portal paired with a lightweight, camera-integrated React Native/Expo mobile app for live event organizers and field teams.",
-    stack: ["React Native", "Expo", "Next.js", "Node.js", "TypeScript", "Firebase"],
-    highlight: "Where events go to become legendary... or at least not get cancelled.",
-    repoUrl: "https://github.com/enchantrezzz/event-horizon.git",
-    liveUrl: "https://event-horizon-bice.vercel.app",
   },
   {
     id: "ecommerce-ui",
@@ -118,6 +132,8 @@ const academic: Project[] = [
     subtitle: "Group Project",
     description:
       "Assisted in the design of a student-focused online marketplace. Focused on usability, layout consistency, and user-friendly design principles. Collaborated with teammates to align design decisions with functional requirements.",
+    role: "UI/UX collaboration focused on information architecture and design consistency.",
+    impact: "Produced a cohesive marketplace interface optimized for student usability.",
     stack: ["Figma", "HTML", "CSS", "PHP"],
     highlight: "Designed with usability and layout consistency as core principles.",
   },
@@ -226,6 +242,23 @@ export const FlagshipProject: React.FC = () => {
           <p className="mt-5 text-sm text-ctp-subtext0 leading-relaxed">
             {project.description}
           </p>
+
+          {(project.role || project.impact) && (
+            <div className="mt-4 grid gap-2 sm:grid-cols-2">
+              {project.role && (
+                <div className="rounded-lg border border-ctp-surface0 bg-ctp-crust/50 p-3">
+                  <p className="text-[10px] uppercase tracking-wider text-ctp-overlay0">My Role</p>
+                  <p className="mt-1 text-xs text-ctp-subtext0 leading-relaxed">{project.role}</p>
+                </div>
+              )}
+              {project.impact && (
+                <div className="rounded-lg border border-ctp-surface0 bg-ctp-crust/50 p-3">
+                  <p className="text-[10px] uppercase tracking-wider text-ctp-overlay0">Impact</p>
+                  <p className="mt-1 text-xs text-ctp-subtext0 leading-relaxed">{project.impact}</p>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Highlight */}
           <div className="mt-4 flex items-start gap-2 rounded-lg border border-ctp-surface0 bg-ctp-crust/60 p-3">
