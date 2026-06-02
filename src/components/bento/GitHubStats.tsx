@@ -51,7 +51,7 @@ export async function GitHubStats() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Open GitHub profile"
-          className="text-ctp-overlay0 hover:text-ctp-text transition-colors"
+          className="rounded-md text-ctp-overlay0 transition-colors hover:text-ctp-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-green/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base"
         >
           <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
         </a>
@@ -82,7 +82,7 @@ export async function GitHubStats() {
               href={repo.html_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col gap-1 rounded-lg border border-ctp-surface0 bg-ctp-crust/40 px-3 py-2.5 text-xs transition-colors hover:border-ctp-surface1 hover:bg-ctp-surface0/40 group"
+              className="group flex flex-col gap-1 rounded-lg border border-ctp-surface0 bg-ctp-crust/40 px-3 py-2.5 text-xs transition-colors hover:border-ctp-surface1 hover:bg-ctp-surface0/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-lavender/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base"
             >
               {/* Name row */}
               <div className="flex items-center justify-between">

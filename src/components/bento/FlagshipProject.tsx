@@ -165,14 +165,22 @@ export const FlagshipProject: React.FC = () => {
         </div>
 
         {/* Featured / Academic toggle */}
-        <div className="flex rounded-lg bg-ctp-crust p-1 border border-ctp-surface0">
+        <div
+          className="flex rounded-lg bg-ctp-crust p-1 border border-ctp-surface0"
+          role="tablist"
+          aria-label="Project category"
+        >
           {(["featured", "academic"] as Tab[]).map((t) => (
             <button
               key={t}
+              type="button"
               onClick={() => handleTabSwitch(t)}
+              role="tab"
+              aria-selected={tab === t}
+              aria-controls="project-detail-panel"
               className={`relative rounded-md px-3 py-1 text-xs font-medium transition-colors capitalize ${
                 tab === t ? "text-ctp-text" : "text-ctp-overlay0 hover:text-ctp-subtext0"
-              }`}
+              } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-lavender/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base`}
             >
               {tab === t && (
                 <motion.span
@@ -191,14 +199,18 @@ export const FlagshipProject: React.FC = () => {
       </div>
 
       {/* Project sub-tabs */}
-      <div className="flex gap-1 mt-4 flex-wrap">
+      <div className="flex gap-1 mt-4 flex-wrap" role="tablist" aria-label={`${tab} project list`}>
         {projects.map((p, i) => (
           <button
             key={p.id}
+            type="button"
             onClick={() => setActiveIndex(i)}
+            role="tab"
+            aria-selected={activeIndex === i}
+            aria-controls="project-detail-panel"
             className={`relative rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
               activeIndex === i ? "text-ctp-text" : "text-ctp-overlay0 hover:text-ctp-subtext0"
-            }`}
+            } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-mauve/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base`}
           >
             {activeIndex === i && (
               <motion.span
@@ -217,6 +229,9 @@ export const FlagshipProject: React.FC = () => {
       {/* Project detail */}
       <AnimatePresence mode="wait">
         <motion.div
+          id="project-detail-panel"
+          role="tabpanel"
+          aria-live="polite"
           key={`${tab}-${project.id}`}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -273,7 +288,7 @@ export const FlagshipProject: React.FC = () => {
                   href={project.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-fit items-center gap-1.5 rounded-md border border-ctp-lavender/30 bg-ctp-lavender/10 px-2.5 py-1.5 text-[11px] text-ctp-lavender transition-colors hover:border-ctp-lavender/50 hover:bg-ctp-lavender/20"
+                  className="inline-flex w-fit items-center gap-1.5 rounded-md border border-ctp-lavender/30 bg-ctp-lavender/10 px-2.5 py-1.5 text-[11px] text-ctp-lavender transition-colors hover:border-ctp-lavender/50 hover:bg-ctp-lavender/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-lavender/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base"
                 >
                   <ExternalLink className="h-3 w-3" aria-hidden="true" />
                   View Repository
@@ -284,7 +299,7 @@ export const FlagshipProject: React.FC = () => {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-fit items-center gap-1.5 rounded-md border border-ctp-blue/30 bg-ctp-blue/10 px-2.5 py-1.5 text-[11px] text-ctp-blue transition-colors hover:border-ctp-blue/50 hover:bg-ctp-blue/20"
+                  className="inline-flex w-fit items-center gap-1.5 rounded-md border border-ctp-blue/30 bg-ctp-blue/10 px-2.5 py-1.5 text-[11px] text-ctp-blue transition-colors hover:border-ctp-blue/50 hover:bg-ctp-blue/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ctp-blue/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ctp-base"
                 >
                   <ExternalLink className="h-3 w-3" aria-hidden="true" />
                   Live Website
