@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Heart, ChevronRight, BookOpen, Monitor, ShoppingBag, Car, Calendar, ExternalLink } from "lucide-react";
+import { Trophy, Heart, ChevronRight, BookOpen, Monitor, ShoppingBag, Car, Calendar, Smartphone, ExternalLink } from "lucide-react";
 
 type Project = {
   id: string;
@@ -34,6 +34,21 @@ const featured: Project[] = [
       "Contributed to a digital health records platform for Botswana that links a citizen's national ID to essential medical information, enabling rapid access during emergencies to improve service delivery in healthcare facilities.",
     stack: ["React Native", "Node.js", "REST APIs", "MOSIP sandbox", "eSignet", "injiVerify"],
     highlight: "Placed 3rd at a regional level (Southern Africa).",
+  },
+  {
+    id: "sobriety-app",
+    icon: <Smartphone className="h-4 w-4 text-ctp-green" aria-hidden="true" />,
+    iconBg: "border-ctp-green/20 bg-ctp-green/5",
+    tag: "Personal Project",
+    tagClass: "border-ctp-green/30 bg-ctp-green/10 text-ctp-green",
+    title: "Sobriety App",
+    subtitle: "Recovery milestone & habit tracker",
+    description:
+      "Built a clean, intuitive sobriety counter and habit tracker focused on daily accountability, milestone visibility, and long-term progress tracking for people in recovery.",
+    stack: ["TypeScript", "React", "Vite", "Supabase"],
+    highlight: "Designed for clarity and consistent day-to-day habit reinforcement.",
+    repoUrl: "https://github.com/enchantrezzz/sobriety-app.git",
+    liveUrl: "https://sobriety-app-zeta.vercel.app/login",
   },
 ];
 
